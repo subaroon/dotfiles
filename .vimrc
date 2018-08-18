@@ -82,4 +82,4 @@ set ruler
 set conceallevel=0
 
 "color scheme
-highlight Visual term=reverse cterm=bold ctermfg=233 ctermbg=215 gui=bold guifg=#000000 guibg=#FD971F
+highlight Visual term=reverse cterm=bold ctermfg=233 ctermbg=172 gui=bold guifg=#000000 guibg=#FD971F
