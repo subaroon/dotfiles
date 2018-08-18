@@ -57,7 +57,8 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'Yggdroot/indentLine'
+"NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'fatih/vim-go'
 "----------------------------------------------------------
 call neobundle#end()
 
@@ -65,7 +66,7 @@ filetype plugin indent on
 
 NeoBundleCheck
 
-"config about motokai
+"config about molokai
 if neobundle#is_installed('molokai')
     colorscheme molokai
 endif
@@ -77,3 +78,8 @@ set laststatus=2
 set showmode
 set showcmd
 set ruler
+
+set conceallevel=0
+
+"color scheme
+highlight Visual term=reverse cterm=bold ctermfg=233 ctermbg=215 gui=bold guifg=#000000 guibg=#FD971F
