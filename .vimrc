@@ -6,6 +6,8 @@ set clipboard=unnamed
 inoremap{ {}<LEFT>
 inoremap( ()<LEFT>
 inoremap[ []<LEFT>
+inoremap" ""<LEFT>
+inoremap' ''<LEFT>
 
 set tabstop=2
 set softtabstop=2
@@ -32,6 +34,8 @@ set number
 
 "highlight cursor
 set cursorline
+set cursorcolumn
+nnoremap <silent><C-m><C-m> :<C-u>setlocal cursorline! cursorcolumn!<CR>
 
 "show the other brackets
 set showmatch
@@ -83,3 +87,4 @@ set conceallevel=0
 
 "color scheme
 highlight Visual term=reverse cterm=bold ctermfg=233 ctermbg=172 gui=bold guifg=#000000 guibg=#FD971F
+highlight LineNr term=reverse cterm=bold ctermfg=233 ctermbg=8
