@@ -13,7 +13,7 @@ set tabstop=2
 set softtabstop=2
 set autoindent
 set shiftwidth=2
-set expandtab
+"set expandtab
 "set list
 "set listchars=tab:»-,trail:-
 
@@ -61,8 +61,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'justmao945/vim-clang'
 "NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'fatih/vim-go'
+"NeoBundle 'fatih/vim-go'
 "----------------------------------------------------------
 call neobundle#end()
 
