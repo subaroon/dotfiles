@@ -17,6 +17,7 @@ set shiftwidth=2
 "set list
 "set listchars=tab:»-,trail:-
 
+set clipboard=unnamedplus
 "config about search and highlight
 "The search by small letter means ignorecase-search,
 "that by including uppercase letter means perfect-match-search
@@ -89,3 +90,15 @@ set conceallevel=0
 "color scheme
 highlight Visual term=reverse cterm=bold ctermfg=233 ctermbg=172 gui=bold guifg=#000000 guibg=#FD971F
 highlight LineNr term=reverse cterm=bold ctermfg=233 ctermbg=8
+
+" for quickfix window
+set switchbuf+=usetab,newtab
+nnoremap [o :copen<CR>
+"previous jump
+nnoremap { :cprevious<CR>
+"next jump
+nnoremap } :cnext<CR>
+"first jump
+nnoremap [f :<C-u>cfirst<CR>
+"last jump
+nnoremap ]l :<C-u>clast<CR>
