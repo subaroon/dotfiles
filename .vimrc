@@ -9,15 +9,25 @@ inoremap[ []<LEFT>
 inoremap" ""<LEFT>
 inoremap' ''<LEFT>
 
+"config about tab
 set tabstop=2
 set softtabstop=2
 set autoindent
 set shiftwidth=2
-"set expandtab
+augroup exTabGroup
+  autocmd!
+  autocmd BufRead,BufNewFile *.c   setlocal noexpandtab
+  autocmd BufRead,BufNewFile *.cpp setlocal noexpandtab
+  autocmd BufRead,BufNewFile *.cc  setlocal noexpandtab
+  autocmd BufRead,BufNewFile *.go  setlocal noexpandtab
+augroup END
 "set list
 "set listchars=tab:»-,trail:-
+"set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
 
+"config about clipboard
 set clipboard=unnamedplus
+
 "config about search and highlight
 "The search by small letter means ignorecase-search,
 "that by including uppercase letter means perfect-match-search
