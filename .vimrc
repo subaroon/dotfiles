@@ -63,8 +63,6 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'justmao945/vim-clang'
-"NeoBundle 'Yggdroot/indentLine'
-"NeoBundle 'fatih/vim-go'
 "----------------------------------------------------------
 call neobundle#end()
 
@@ -93,7 +91,10 @@ highlight LineNr term=reverse cterm=bold ctermfg=233 ctermbg=8
 
 " for quickfix window
 set switchbuf+=usetab,newtab
+"open quickfix window
 nnoremap [o :copen<CR>
+"close quickfix window
+nnoremap [c :cclose<CR>
 "previous jump
 nnoremap { :cprevious<CR>
 "next jump
@@ -102,3 +103,4 @@ nnoremap } :cnext<CR>
 nnoremap [f :<C-u>cfirst<CR>
 "last jump
 nnoremap ]l :<C-u>clast<CR>
+
