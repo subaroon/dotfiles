@@ -49,6 +49,9 @@ set cursorline
 set cursorcolumn
 nnoremap <silent><C-m><C-m> :<C-u>setlocal cursorline! cursorcolumn!<CR>
 
+"switch paste mode
+nnoremap <silent><C-p><C-p> :<C-u>set paste!<CR>
+
 "show the other brackets
 set showmatch
 
