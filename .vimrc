@@ -74,6 +74,8 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'justmao945/vim-clang'
+NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'iamcco/markdown-preview.nvim'
 "----------------------------------------------------------
 call neobundle#end()
 
@@ -95,6 +97,9 @@ set showcmd
 set ruler
 
 set conceallevel=0
+
+"specify browser for plugin tyru/open-browser.vim
+let g:openbrowser_browser_commands = [ {'name': 'google-chrome-stable',  'args': ['{browser}', '{uri}']} ]
 
 "color scheme
 highlight Visual term=reverse cterm=bold ctermfg=233 ctermbg=172 gui=bold guifg=#000000 guibg=#FD971F
