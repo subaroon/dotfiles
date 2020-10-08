@@ -1,4 +1,8 @@
-## vim plugin 
+## environment
+
+Ubuntu18.04.5
+
+## vim plugin
 
 ### iamcco/markdown-preview.nvim
 
