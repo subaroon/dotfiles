@@ -144,11 +144,17 @@ nnoremap [f :<C-u>cfirst<CR>
 nnoremap [l :<C-u>clast<CR>
 
 "highlight switch
-nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
+nnoremap <Esc><Esc> :<C-u>set nohlsearch!<CR>
 
 "cursor pointer switch
-nnoremap <silent><C-m><C-m> :<C-u>setlocal cursorline! cursorcolumn!<CR>
+nnoremap <C-m><C-m> :<C-u>setlocal cursorline! cursorcolumn!<CR>
 
 "paste mode switch
-nnoremap <silent><C-p><C-p> :<C-u>set paste!<CR>
+nnoremap <C-p><C-p> :<C-u>set paste!<CR>
+
+"horizontal split
+nnoremap <C-w>- :split<CR>
+
+"vertical split
+nnoremap <C-w><bar> :vsplit<CR>
 
