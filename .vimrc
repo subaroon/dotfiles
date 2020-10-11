@@ -58,6 +58,12 @@ if has('vim_starting')
         echo "install NeoBundle..."
         :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
     endif
+
+    set runtimepath+=~/.vim/autoload/
+    if !filereadable(expand("~/.vim/autoload/plug.vim"))
+        echo "install vim-plug..."
+        :call system("curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
+    endif
 endif
 
 "==============neobundle plugin setting==============
@@ -78,6 +84,11 @@ call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
 
+"==============vim-plug plugin setting==============
+call plug#begin(expand('~/.vim/plugged/'))
+"----------------------------------------------------------
+"----------------------------------------------------------
+call plug#end()
 
 
 "********** plugin dedicated configuration ********"
