@@ -50,21 +50,19 @@ set wildmode=longest,full
 set history=500
 
 
-"********** NeoBundle configuration ********"
+"********** plugin configuration ********"
 
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
-
     if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
         echo "install NeoBundle..."
         :call system("git clone git://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim")
     endif
 endif
 
+"==============neobundle plugin setting==============
 call neobundle#begin(expand('~/.vim/bundle/'))
-
 NeoBundleFetch 'Shougo/neobundle.vim'
-" write plugin following
 "----------------------------------------------------------
 NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
@@ -81,14 +79,15 @@ filetype plugin indent on
 NeoBundleCheck
 
 
-"********** molokai plugin configuration ********"
 
+"********** plugin dedicated configuration ********"
+"
+"molokai plugin configuration "
 if neobundle#is_installed('molokai')
     colorscheme molokai
 endif
 
-
-"********** open-browser plugin configuration ********"
+"open-browser plugin configuration"
 let g:openbrowser_browser_commands = [ {'name': 'google-chrome-stable',  'args': ['{browser}', '{uri}']} ]
 
 "nerdtree plugin configuration
