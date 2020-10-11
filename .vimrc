@@ -74,9 +74,9 @@ NeoBundle 'iamcco/markdown-preview.nvim'
 "NOTE: Execute ~/.vim/bundle/markdown-preview.nvim/app/install.sh
 "      to complete installing markdown-preview.nvim
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'scrooloose/nerdtree'
 "----------------------------------------------------------
 call neobundle#end()
-
 filetype plugin indent on
 NeoBundleCheck
 
@@ -90,6 +90,9 @@ endif
 
 "********** open-browser plugin configuration ********"
 let g:openbrowser_browser_commands = [ {'name': 'google-chrome-stable',  'args': ['{browser}', '{uri}']} ]
+
+"nerdtree plugin configuration
+nnoremap <C-i><C-i> :NERDTreeToggle<CR>
 
 
 "********** quickfix window configuration ********"
