@@ -139,7 +139,7 @@ nnoremap [c :cclose<CR>
 nnoremap { :cprevious<CR>
 nnoremap } :cnext<CR>
 nnoremap [f :<C-u>cfirst<CR>
-nnoremap ]l :<C-u>clast<CR>
+nnoremap [l :<C-u>clast<CR>
 
 "highlight switch
 nnoremap <silent><Esc><Esc> :<C-u>set nohlsearch!<CR>
