@@ -1,3 +1,5 @@
-# README
+# !!! This branch has alredy been unused.  !!!
 
-these dot configuration are for Mac
+# Platform
+MacBook
+
