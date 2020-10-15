@@ -123,6 +123,7 @@ let g:asyncomplete_popup_delay = 200
 let g:lsp_text_edit_enabled = 1
 nnoremap <Leader>d :tab LspDefinition<CR>
 nnoremap <Leader>t :tab LspTypeDefinition<CR>
+nnoremap <Leader>i :LspImplementation<CR>
 nnoremap <Leader>r :LspReference<CR>
 nnoremap <Leader>R :LspRename<CR>
 nnoremap <Leader>f :LspDocumentFormat<CR>
