@@ -1,15 +1,11 @@
 "********** file configuration ********"
-"
-"set fileencoding to utf-8
-set fileencoding=utf-8
 
-"set new linecode corresponding to platform automatically
+set fileencoding=utf-8
 set fileformats=unix,mac,dos
 
 
 "********** tab configuration ********"
 
-"config about tab
 set tabstop=2
 set softtabstop=2
 set autoindent
@@ -26,9 +22,6 @@ augroup END
 
 "********** tab configuration ********"
 
-"use system clipboard
-set clipboard=unnamed
-"config about clipboard
 set clipboard=unnamedplus
 
 
@@ -42,11 +35,8 @@ set smartcase
 
 "********** command configuration ********"
 
-"config about command complement
 set wildmenu
 set wildmode=longest,full
-
-"config about command history
 set history=500
 
 
@@ -75,8 +65,6 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'vim-scripts/gtags.vim'
 NeoBundle 'iamcco/markdown-preview.nvim'
-"NOTE: Execute ~/.vim/bundle/markdown-preview.nvim/app/install.sh
-"      to complete installing markdown-preview.nvim
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'scrooloose/nerdtree'
 "----------------------------------------------------------
@@ -99,18 +87,18 @@ call plug#end()
 
 "********** plugin dedicated configuration ********"
 
-"molokai plugin configuration "
+"=====molokai plugin configuration=====
 if neobundle#is_installed('molokai')
     colorscheme molokai
 endif
 
-"open-browser plugin configuration"
+"=====open-browser plugin configuration=====
 let g:openbrowser_browser_commands = [ {'name': 'google-chrome-stable',  'args': ['{browser}', '{uri}']} ]
 
-"nerdtree plugin configuration
+"=====nerdtree plugin configuration=====
 nnoremap <C-i><C-i> :NERDTreeToggle<CR>
 
-"vim-lsp plugin configuration
+"=====vim-lsp plugin configuration=====
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_signs_enabled = 1
@@ -131,6 +119,7 @@ nnoremap <Leader>h :LspHover<CR>
 
 
 "********** quickfix window configuration ********"
+
 set switchbuf+=usetab,newtab
 
 
