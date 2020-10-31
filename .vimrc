@@ -28,8 +28,7 @@ augroup END
 
 "use system clipboard
 set clipboard=unnamed
-"config about clipboard
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 
 "********** search configuration ********"
