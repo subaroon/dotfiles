@@ -17,7 +17,7 @@ set shiftwidth=2
 set expandtab
 augroup exTabGroup
   autocmd!
-  autocmd BufRead,BufNewFile *.go  setlocal noexpandtab
+  autocmd BufRead,BufNewFile *.go *.py setlocal noexpandtab
 augroup END
 ""set list
 ""set listchars=tab:»-,trail:-
@@ -117,9 +117,10 @@ let g:lsp_signs_error = {'text': '✗'}
 let g:lsp_signs_warning = {'text': '‼', 'icon': '/path/to/some/icon'}
 let g:lsp_signs_hint = {'icon': '/path/to/some/other/icon'}
 let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_auto_completeopt = 0
+let g:asyncomplete_auto_completeopt = 1
 let g:asyncomplete_popup_delay = 200
-let g:lsp_text_edit_enabled = 1
+let g:lsp_insert_text_enabled = 0
+let g:lsp_text_edit_enabled = 0
 nnoremap <Leader>d :tab LspDefinition<CR>
 nnoremap <Leader>t :tab LspTypeDefinition<CR>
 nnoremap <Leader>i :LspImplementation<CR>
