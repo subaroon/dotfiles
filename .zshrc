@@ -24,6 +24,7 @@ function ghql() {
 # environemntal variable
 export GOPATH=$HOME/dev
 export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$HOME/.nodebrew/current/bin
 
 # zsh completion
 fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
@@ -42,4 +43,6 @@ ZSH_THEME_GIT_PROMPT_BEHIND="%{$fg[red]%}%{-%G%}"
 ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[green]%}%{+%G%}"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}%{✔%G%}"
 RPROMPT='$(git_super_status)'
+
+. ~/.zsh_secrets
 
