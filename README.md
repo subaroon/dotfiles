@@ -23,8 +23,9 @@ Included patches: 1-1923
 The procedure to build vim
 ```
 git clone https://github.com/vim/vim.git
-cd vim
-git checkout 4f6b6ed208a15552f0eb7f27b7ca945f59f22c1d
+cd vim/src
+make distclean
+./configure --enable-python3interp=yes
 make
 sudo make install
 ```
