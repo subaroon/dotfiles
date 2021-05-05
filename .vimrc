@@ -63,10 +63,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'vim-scripts/gtags.vim'
 NeoBundle 'iamcco/markdown-preview.nvim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'vim-scripts/gtags.vim'
 "----------------------------------------------------------
 call neobundle#end()
 filetype plugin indent on
@@ -76,11 +76,10 @@ NeoBundleCheck
 call plug#begin(expand('~/.vim/plugged/'))
 "----------------------------------------------------------
 "Isuue PlugInstall after you update the following
-Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'mattn/vim-lsp-settings'
 "----------------------------------------------------------
 call plug#end()
 
@@ -105,22 +104,18 @@ let g:lsp_signs_enabled = 1
 let g:lsp_signs_error = {'text': '✗'}
 let g:lsp_signs_warning = {'text': '‼', 'icon': '/path/to/some/icon'}
 let g:lsp_signs_hint = {'icon': '/path/to/some/other/icon'}
-let g:asyncomplete_auto_popup = 1
-let g:asyncomplete_auto_completeopt = 0
-let g:asyncomplete_popup_delay = 200
-let g:lsp_text_edit_enabled = 1
+"let g:asyncomplete_auto_popup = 1
+"let g:asyncomplete_auto_completeopt = 0
+"let g:asyncomplete_popup_delay = 200
+"let g:lsp_text_edit_enabled = 1
 nnoremap <Leader>d :tab LspDefinition<CR>
 nnoremap <Leader>t :tab LspTypeDefinition<CR>
-nnoremap <Leader>i :LspImplementation<CR>
+nnoremap <Leader>i :tab LspImplementation<CR>
 nnoremap <Leader>r :LspReference<CR>
 nnoremap <Leader>R :LspRename<CR>
 nnoremap <Leader>f :LspDocumentFormat<CR>
+nnoremap <Leader>D :LspDocumentDiagnostics<CR>
 nnoremap <Leader>h :LspHover<CR>
-
-
-"********** quickfix window configuration ********"
-
-set switchbuf+=usetab,newtab
 
 
 "********** visual configuration ********"
@@ -183,3 +178,5 @@ nnoremap <C-w>- :split<CR>
 "vertical split
 nnoremap <C-w><bar> :vsplit<CR>
 
+"clone tab
+nnoremap gsp :tab sp<CR>
