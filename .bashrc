@@ -12,8 +12,6 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 alias snoop='find . -type f | xargs grep -i --color=auto $1'
 alias gtags_py='gtags --gtagslabel=pygments'
 alias gcd='cd `git rev-parse --show-toplevel`'
@@ -28,6 +26,7 @@ export GOPATH=$HOME/dev
 export PATH=$PATH:/usr/local/go/bin:$GOPATH/bin
 
 # for kurbenetes
+export KUBE_EDITOR=vim
 source <(kubectl completion bash)
 
 function ghql() {
