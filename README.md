@@ -1,6 +1,12 @@
 ## distribution
 
-Ubuntu18.04.5
+Ubuntu20.04
+
+## gnu global
+
+apt install -y global
+pip install pygments
+
 
 ## editor
 
