@@ -49,5 +49,5 @@ The procedure is the following.
 ## terminal multiplexer
 
 ```
-tmux 2.6
+tmux 3.0a
 ```
