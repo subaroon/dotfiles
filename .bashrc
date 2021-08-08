@@ -39,4 +39,3 @@ function ghql() {
     fi
   fi
 }
-
