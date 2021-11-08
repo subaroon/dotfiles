@@ -17,7 +17,7 @@ set shiftwidth=2
 set expandtab
 augroup exTabGroup
   autocmd!
-  autocmd BufRead,BufNewFile *.go *.py setlocal noexpandtab
+  autocmd BufRead,BufNewFile *.md setlocal noexpandtab
 augroup END
 ""set list
 ""set listchars=tab:»-,trail:-
@@ -78,6 +78,7 @@ NeoBundle 'iamcco/markdown-preview.nvim'
 "      to complete installing markdown-preview.nvim
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle "lepture/vim-jinja"
 "----------------------------------------------------------
 call neobundle#end()
 filetype plugin indent on
@@ -92,6 +93,8 @@ Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'psf/black', { 'branch': 'stable' }
+Plug 'nathanalderson/yang.vim'
 "----------------------------------------------------------
 call plug#end()
 
@@ -129,7 +132,22 @@ nnoremap <Leader>R :LspRename<CR>
 nnoremap <Leader>f :LspDocumentFormat<CR>
 nnoremap <Leader>h :LspHover<CR>
 
+"********** for pyls plugin ********"
+let g:lsp_settings = {
+\   'pyls-all': {
+\     'workspace_config': {
+\       'pyls': {
+\         'configurationSources': ['flake8']
+\       }
+\     }
+\   },
+\}
+let g:syntastic_python_pylint_post_args="--max-line-length=120 --ignore W503"
 
+augroup LspAutoFormatting
+    autocmd!
+    autocmd BufWritePre *.py LspDocumentFormatSync
+augroup END
 "********** quickfix window configuration ********"
 set switchbuf+=usetab,newtab
 
