@@ -4,6 +4,7 @@ set fileformats=unix,mac,dos
 
 
 "********** tab configuration ********"
+"config about tab
 set tabstop=2
 set softtabstop=2
 set autoindent
@@ -13,9 +14,13 @@ augroup exTabGroup
   autocmd!
   autocmd BufRead,BufNewFile *.go,MakeFile setlocal noexpandtab
 augroup END
+""set list
+""set listchars=tab:»-,trail:-
+""set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
 
 
 "********** clipboard configuration ********"
+"use system clipboard
 set clipboard=unnamedplus
 
 
@@ -27,8 +32,11 @@ set smartcase
 
 
 "********** command configuration ********"
+"config about command complement
 set wildmenu
-set wildmode=longest,list
+set wildmode=longest,full
+
+"config about command history
 set history=500
 
 
@@ -54,10 +62,9 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'vim-scripts/gtags.vim'
 NeoBundle 'iamcco/markdown-preview.nvim'
-"  NOTE: Execute ~/.vim/bundle/markdown-preview.nvim/app/install.sh to complete
-"        installing iamcco/markdown-preview.nvim
+"NOTE: Execute ~/.vim/bundle/markdown-preview.nvim/app/install.sh
+"      to complete installing markdown-preview.nvim
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'scrooloose/nerdtree'
 "----------------------------------------------------------
@@ -69,25 +76,47 @@ NeoBundleCheck
 call plug#begin(expand('~/.vim/plugged/'))
 "----------------------------------------------------------
 "Isuue PlugInstall after you update the following
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'prabirshrestha/asyncomplete.vim'
-"Plug 'prabirshrestha/asyncomplete-lsp.vim'
-"Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 "----------------------------------------------------------
 call plug#end()
 
 
 "********** plugin dedicated configuration ********"
-"=====molokai plugin configuration=====
+"=====tomasr/molokai=====
 if neobundle#is_installed('molokai')
     colorscheme molokai
 endif
 
-"=====open-browser plugin configuration=====
+"=====tyru/open-browser.vim=====
 let g:openbrowser_browser_commands = [ {'name': 'google-chrome-stable',  'args': ['{browser}', '{uri}']} ]
 
-"=====nerdtree plugin configuration=====
+"=====scrooloose/nerdtree=====
 nnoremap <C-i><C-i> :NERDTreeToggle<CR>
+
+"=====prabirshrestha/vim-lsp=====
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_signs_error = {'text': '✗'}
+let g:lsp_diagnostics_signs_warning = {'text': '‼'}
+let g:lsp_diagnostics_signs_hint = {'text': '?'}
+let g:asyncomplete_auto_popup = 1
+let g:asyncomplete_auto_completeopt = 1
+let g:asyncomplete_popup_delay = 200
+let g:lsp_insert_text_enabled = 0
+let g:lsp_text_edit_enabled = 0
+let g:lsp_document_code_action_signs_enabled = 0
+nnoremap <Leader>d :tab LspDefinition<CR>
+nnoremap <Leader>t :tab LspTypeDefinition<CR>
+nnoremap <Leader>i :LspImplementation<CR>
+nnoremap <Leader>r :LspReference<CR>
+nnoremap <Leader>R :LspRename<CR>
+nnoremap <Leader>f :LspDocumentFormat<CR>
+nnoremap <Leader>h :LspHover<CR>
 
 
 "********** quickfix window configuration ********"
