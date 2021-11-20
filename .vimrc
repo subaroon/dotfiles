@@ -1,14 +1,9 @@
 "********** file configuration ********"
-"
-"set fileencoding to utf-8
 set fileencoding=utf-8
-
-"set new linecode corresponding to platform automatically
 set fileformats=unix,mac,dos
 
 
 "********** tab configuration ********"
-
 "config about tab
 set tabstop=2
 set softtabstop=2
@@ -17,22 +12,19 @@ set shiftwidth=2
 set expandtab
 augroup exTabGroup
   autocmd!
-  autocmd BufRead,BufNewFile *.go *.py setlocal noexpandtab
+  autocmd BufRead,BufNewFile *.go,MakeFile setlocal noexpandtab
 augroup END
 ""set list
 ""set listchars=tab:»-,trail:-
 ""set listchars=tab:>.,trail:_,extends:>,precedes:<,nbsp:%
 
 
-"********** tab configuration ********"
-
+"********** clipboard configuration ********"
 "use system clipboard
 set clipboard=unnamed
-"set clipboard=unnamedplus
 
 
 "********** search configuration ********"
-
 set incsearch
 set hlsearch
 set ignorecase
@@ -40,7 +32,6 @@ set smartcase
 
 
 "********** command configuration ********"
-
 "config about command complement
 set wildmenu
 set wildmode=longest,full
@@ -50,7 +41,6 @@ set history=500
 
 
 "********** plugin configuration ********"
-
 if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
     if !isdirectory(expand("~/.vim/bundle/neobundle.vim/"))
@@ -72,7 +62,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'vim-scripts/gtags.vim'
 NeoBundle 'iamcco/markdown-preview.nvim'
 "NOTE: Execute ~/.vim/bundle/markdown-preview.nvim/app/install.sh
 "      to complete installing markdown-preview.nvim
@@ -87,9 +76,9 @@ NeoBundleCheck
 call plug#begin(expand('~/.vim/plugged/'))
 "----------------------------------------------------------
 "Isuue PlugInstall after you update the following
-Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 "----------------------------------------------------------
@@ -97,30 +86,30 @@ call plug#end()
 
 
 "********** plugin dedicated configuration ********"
-
-"molokai plugin configuration "
+"=====tomasr/molokai=====
 if neobundle#is_installed('molokai')
     colorscheme molokai
 endif
 
-"open-browser plugin configuration"
+"=====tyru/open-browser.vim=====
 let g:openbrowser_browser_commands = [ {'name': 'google-chrome-stable',  'args': ['{browser}', '{uri}']} ]
 
-"nerdtree plugin configuration
+"=====scrooloose/nerdtree=====
 nnoremap <C-i><C-i> :NERDTreeToggle<CR>
 
-"vim-lsp plugin configuration
+"=====prabirshrestha/vim-lsp=====
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
 let g:lsp_signs_enabled = 1
-let g:lsp_signs_error = {'text': '✗'}
-let g:lsp_signs_warning = {'text': '‼', 'icon': '/path/to/some/icon'}
-let g:lsp_signs_hint = {'icon': '/path/to/some/other/icon'}
+let g:lsp_diagnostics_signs_error = {'text': '✗'}
+let g:lsp_diagnostics_signs_warning = {'text': '‼'}
+let g:lsp_diagnostics_signs_hint = {'text': '?'}
 let g:asyncomplete_auto_popup = 1
 let g:asyncomplete_auto_completeopt = 1
 let g:asyncomplete_popup_delay = 200
 let g:lsp_insert_text_enabled = 0
 let g:lsp_text_edit_enabled = 0
+let g:lsp_document_code_action_signs_enabled = 0
 nnoremap <Leader>d :tab LspDefinition<CR>
 nnoremap <Leader>t :tab LspTypeDefinition<CR>
 nnoremap <Leader>i :LspImplementation<CR>
@@ -135,25 +124,15 @@ set switchbuf+=usetab,newtab
 
 
 "********** visual configuration ********"
-
-"show line number
 set number
-
-"show cursor pointer
 set cursorline
 set cursorcolumn
-
-"show the match bracket to close
 set showmatch
-
-"show some meta character
 set conceallevel=0
-
 set laststatus=2
 set showmode
 set showcmd
 set ruler
-
 set t_Co=256
 syntax enable
 
@@ -163,7 +142,6 @@ highlight LineNr term=reverse cterm=bold ctermfg=233 ctermbg=8
 
 
 "********** map configuration ********"
-
 " branckets and so on.
 inoremap{ {}<LEFT>
 inoremap( ()<LEFT>
@@ -194,3 +172,5 @@ nnoremap <C-w>- :split<CR>
 "vertical split
 nnoremap <C-w><bar> :vsplit<CR>
 
+"clone tab
+nnoremap gsp :tab sp<CR>
