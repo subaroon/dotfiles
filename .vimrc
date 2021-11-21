@@ -122,16 +122,41 @@ nnoremap <Leader>f :LspDocumentFormat<CR>
 nnoremap <Leader>h :LspHover<CR>
 
 "********** for pyls plugin ********"
+" load flake8 configuration
 let g:lsp_settings = {
-\   'pyls-all': {
-\     'workspace_config': {
-\       'pyls': {
-\         'configurationSources': ['flake8']
-\       }
-\     }
-\   },
+\  'pylsp-all': {
+\    'workspace_config': {
+\      'pylsp': {
+\        'configurationSources': ['flake8'],
+\      }
+\    }
+\  }
 \}
-let g:syntastic_python_pylint_post_args="--max-line-length=120 --ignore W503"
+
+" load flake8 configuration and disable every linter plugin except flake8
+"let g:lsp_settings = {
+"\  'pylsp-all': {
+"\    'workspace_config': {
+"\      'pylsp': {
+"\        'configurationSources': ['flake8'],
+"\        'plugins': {
+"\          'flake8': {
+"\            'enabled': 1
+"\          },
+"\          'mccabe': {
+"\            'enabled': 0
+"\          },
+"\          'pycodestyle': {
+"\            'enabled': 0
+"\          },
+"\          'pyflakes': {
+"\            'enabled': 0
+"\          },
+"\        }
+"\      }
+"\    }
+"\  }
+"\}
 
 augroup LspAutoFormatting
     autocmd!
