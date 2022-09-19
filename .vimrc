@@ -1,6 +1,8 @@
 "********** file configuration ********"
 set fileencoding=utf-8
 set fileformats=unix,mac,dos
+"switch file buffer without save
+set hidden
 
 
 "********** tab configuration ********"
@@ -12,7 +14,7 @@ set shiftwidth=2
 set expandtab
 augroup exTabGroup
   autocmd!
-  autocmd BufRead,BufNewFile *.go,MakeFile setlocal noexpandtab
+  autocmd BufRead,BufNewFile *.go,*.html,MakeFile setlocal noexpandtab
 augroup END
 ""set list
 ""set listchars=tab:»-,trail:-
@@ -158,10 +160,12 @@ let g:lsp_settings = {
 "\  }
 "\}
 
-augroup LspAutoFormatting
-    autocmd!
-    autocmd BufWritePre *.py LspDocumentFormatSync
-augroup END
+" # format a python code file automatically while save a python code file
+"augroup LspAutoFormatting
+"    autocmd!
+"    autocmd BufWritePre *.py LspDocumentFormatSync
+"augroup END
+
 "********** quickfix window configuration ********"
 set switchbuf+=usetab,newtab
 
