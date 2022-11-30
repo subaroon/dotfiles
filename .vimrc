@@ -14,7 +14,7 @@ set shiftwidth=2
 set expandtab
 augroup exTabGroup
   autocmd!
-  autocmd BufRead,BufNewFile *.go,*.html,MakeFile setlocal noexpandtab
+  autocmd BufRead,BufNewFile *.go,MakeFile setlocal noexpandtab
 augroup END
 ""set list
 ""set listchars=tab:»-,trail:-
@@ -84,7 +84,7 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'psf/black', { 'branch': 'stable' }
+"Plug 'psf/black', { 'branch': 'stable' }
 Plug 'nathanalderson/yang.vim'
 "----------------------------------------------------------
 call plug#end()
