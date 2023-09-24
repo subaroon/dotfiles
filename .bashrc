@@ -15,6 +15,7 @@ alias ll='ls -alF'
 alias snoop='find . -type f | xargs grep -i --color=auto $1'
 alias gtags_py='gtags --gtagslabel=pygments'
 alias gcd='cd `git rev-parse --show-toplevel`'
+alias vi='vim'
 
 # for git
 source /usr/share/bash-completion/completions/git

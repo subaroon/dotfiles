@@ -1,37 +1,68 @@
 ## distribution
 
-Ubuntu20.04
+Ubuntu22.04
 
-## gnu global
+## Setup
 
-apt install -y global
-pip install pygments
+1. install tools
+
+``` bash
+sudo apt install -y curl git tmux build-essential ssh
+```
+
+1. copy bashrc tmux.conf
+``` bash
+cp .bashrc ~/.bashrc
+cp .tmux.conf ~/.tmux.conf
+```
+
+1. Golang
+refer to https://go.dev/doc/install
 
 
-## editor
+1. ghq and peco
+
+``` bash
+go install github.com/x-motemen/ghq@latest
+go install github.com/peco/peco/cmd/peco@latest
+```
+
+``` bash
+mkdir $HOME/dev
+
+# fix .gitconfig
+vi ~/.gitconfig
+[ghq]
+  root = ~/dev
+```
+
+## vim
 
 ```
-VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Oct 12 2020 19:47:19)
-Included patches: 1-1838
+VIM - Vi IMproved 9.0 (2022 Jun 28, compiled Sep 24 2023 01:25:01)
+Included pathces: 1-1927
 ```
 
 The procedure to build vim
-```
-git clone https://github.com/vim/vim.git
-cd vim
-git checkout 93be1644db2848659b0610477968c83f53619da1
-./configure  --enable-cscope --with-features=huge --with-x
+``` bash
+sudo apt-get update
+sudo apt-get install -y libncurses5-dev \
+  libgtk2.0-dev libatk1.0-dev \
+  libcairo2-dev libx11-dev libxpm-dev libxt-dev python3-dev \
+  ruby-dev lua5.1 liblua5.1-dev libperl-dev git
+./configure --with-features=huge \
+            --enable-multibyte \
+            --enable-rubyinterp=yes \
+            --enable-python3interp=yes \
+            --with-python3-config-dir=$(python3-config --configdir) \
+            --enable-perlinterp=yes \
+            --enable-luainterp=yes \
+            --enable-gui=gtk2 \
+            --enable-cscope \
+            --prefix=/usr/local
 make
-sudo make install
+make install
 ```
-
-### vim plugins Installation
-
-My vimrc use both neobundle and vim-plug as plugin manager.  
-These plugin manager and most plugins are installed automatically when you load my vimrc for the first time.  
-
-Some plugins require you to issue some commands manually to install them.  
-The procedure is the following.
 
 #### iamcco/markdown-preview.nvim installation
 
@@ -42,12 +73,7 @@ The procedure is the following.
 1. install nodejs
 1. issue ``:call mkdp#util#install()`` on vim
 
-#### all plugins using vim-plug as plugin manager
+#### plugins installed by vim-plug
 
 1. issue ``:PlugInstall`` on vim to install all plugins using vim-plug as plugin manager.
 
-## terminal multiplexer
-
-```
-tmux 3.0a
-```
