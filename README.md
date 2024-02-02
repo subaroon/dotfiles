@@ -7,7 +7,7 @@ Ubuntu22.04
 1. install tools
 
 ``` bash
-sudo apt install -y curl git tmux build-essential ssh
+sudo apt install -y curl git tmux build-essential ssh nodejs
 ```
 
 1. copy bashrc tmux.conf
@@ -34,6 +34,9 @@ mkdir $HOME/dev
 vi ~/.gitconfig
 [ghq]
   root = ~/dev
+
+[core]
+  editor = vim
 ```
 
 ## vim
@@ -61,8 +64,18 @@ sudo apt-get install -y libncurses5-dev \
             --enable-cscope \
             --prefix=/usr/local
 make
-make install
+sudo make install
 ```
+
+#### neobundle
+``` bash
+mkdir -p ~/.vim/bundle
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+```
+
+#### plugins installed by vim-plug
+
+1. issue ``:PlugInstall`` on vim to install all plugins using vim-plug as plugin manager.
 
 #### iamcco/markdown-preview.nvim installation
 
@@ -72,8 +85,3 @@ make install
     ```
 1. install nodejs
 1. issue ``:call mkdp#util#install()`` on vim
-
-#### plugins installed by vim-plug
-
-1. issue ``:PlugInstall`` on vim to install all plugins using vim-plug as plugin manager.
-
