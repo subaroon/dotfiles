@@ -19,8 +19,7 @@ alias vi='vim'
 
 # for git
 source /usr/share/bash-completion/completions/git
-source $HOME/.git-prompt.sh
-export PS1='[\u \W$(__git_ps1 " (%s)")]\$ '
+export PS1='[\u@\H \W$(__git_ps1 " (%s)")]\$ '
 
 # for Golang
 export GOPATH=$HOME/dev
