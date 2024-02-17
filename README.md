@@ -48,13 +48,11 @@ ref: https://asdf-vm.com/guide/getting-started.html
 
 ## vim
 
-```
-VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Feb 14 2024 22:57:22)
-Included patches: 1-5169
-```
-
-The procedure to build vim
-``` bash
+``` bashrc
+ghq get https://github.com/vim/vim.git
+## move vim PROJECT ROOT
+### ghql -> vim
+git checkout v8.2.5169
 sudo apt-get update
 sudo apt-get install -y libncurses5-dev \
   libgtk2.0-dev libatk1.0-dev \
@@ -90,5 +88,4 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
     ```
     ~/.vim/bundle/markdown-preview.nvim/app/install.sh
     ```
-1. install nodejs
 1. issue ``:call mkdp#util#install()`` on vim
