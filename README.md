@@ -42,8 +42,8 @@ vi ~/.gitconfig
 ## vim
 
 ```
-VIM - Vi IMproved 9.0 (2022 Jun 28, compiled Sep 24 2023 01:25:01)
-Included pathces: 1-1927
+VIM - Vi IMproved 8.2 (2019 Dec 12, compiled Feb 14 2024 22:57:22)
+Included patches: 1-5169
 ```
 
 The procedure to build vim
