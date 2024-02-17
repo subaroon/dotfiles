@@ -100,6 +100,7 @@ nnoremap <C-i><C-i> :NERDTreeToggle<CR>
 "=====prabirshrestha/vim-lsp=====
 let g:lsp_diagnostics_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_diagnostics_echo_delay = 50
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_signs_error = {'text': '✗'}
 let g:lsp_diagnostics_signs_warning = {'text': '‼'}
@@ -116,6 +117,7 @@ nnoremap <Leader>i :LspImplementation<CR>
 nnoremap <Leader>r :LspReference<CR>
 nnoremap <Leader>R :LspRename<CR>
 nnoremap <Leader>f :LspDocumentFormat<CR>
+nnoremap <Leader>a :LspCodeAction<CR>
 nnoremap <Leader>h :LspHover<CR>
 
 
