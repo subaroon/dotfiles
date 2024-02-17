@@ -39,6 +39,13 @@ vi ~/.gitconfig
   editor = vim
 ```
 
+1. asdf
+```
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0
+```
+update version if you needed.
+ref: https://asdf-vm.com/guide/getting-started.html
+
 ## vim
 
 ```
